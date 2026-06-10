@@ -13,15 +13,35 @@ public class NumberWizard : MonoBehaviour
     [SerializeField] private Button lowerButton;
     [SerializeField] private Button correctButton;
 
+    
+    [SerializeField] private Button restartButton;
+
+    
+    private int startMin;
+    private int startMax;
     private int guess;
 
     void Start()
     {
+        
+        startMin = min;
+        startMax = max;
+
         StartGame();
     }
 
     void StartGame()
     {
+        
+        min = startMin;
+        max = startMax;
+
+        
+        if (higherButton != null) higherButton.interactable = true;
+        if (lowerButton != null) lowerButton.interactable = true;
+        if (correctButton != null) correctButton.interactable = true;
+        if (restartButton != null) restartButton.gameObject.SetActive(false);
+
         NextGuess();
     }
 
@@ -46,9 +66,19 @@ public class NumberWizard : MonoBehaviour
             guessText.text = guess.ToString() + " - Win!";
         }
 
+        
         if (higherButton != null) higherButton.interactable = false;
         if (lowerButton != null) lowerButton.interactable = false;
         if (correctButton != null) correctButton.interactable = false;
+
+        
+        if (restartButton != null) restartButton.gameObject.SetActive(true);
+    }
+
+    
+    public void OnRestartPressed()
+    {
+        StartGame();
     }
 
     void NextGuess()
