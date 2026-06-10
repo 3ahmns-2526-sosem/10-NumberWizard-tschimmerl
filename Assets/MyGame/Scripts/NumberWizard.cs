@@ -27,6 +27,24 @@ public class NumberWizard : MonoBehaviour
     }
 
     
+    public void OnHigherPressed()
+    {
+        
+        min = guess + 1;
+
+        
+        NextGuess();
+    }
+
+    void NextGuess()
+    {
+        
+        guess = (min + max) / 2;
+
+        
+        UpdateGuessDisplay();
+    }
+
     void UpdateGuessDisplay()
     {
         if (guessText != null)
