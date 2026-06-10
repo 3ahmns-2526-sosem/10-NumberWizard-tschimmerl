@@ -1481,7 +1481,7 @@ GameObject:
   - component: {fileID: 1508005156}
   - component: {fileID: 1508005155}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: NumberWIzard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
