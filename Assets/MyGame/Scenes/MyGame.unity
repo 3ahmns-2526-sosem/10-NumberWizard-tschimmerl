@@ -955,7 +955,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 555384058}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1727011767}
+        m_TargetAssemblyTypeName: NumberWizard, Assembly-CSharp
+        m_MethodName: OnCorrectPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &555384058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1645,6 +1657,9 @@ MonoBehaviour:
   min: 1
   max: 100
   guessText: {fileID: 1455095775}
+  higherButton: {fileID: 427868793}
+  lowerButton: {fileID: 281621580}
+  correctButton: {fileID: 555384057}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
