@@ -45,6 +45,16 @@ public class NumberWizard : MonoBehaviour
         UpdateGuessDisplay();
     }
 
+   
+    public void OnLowerPressed()
+    {
+        
+        max = guess - 1;
+
+        
+        NextGuess();
+    }
+
     void UpdateGuessDisplay()
     {
         if (guessText != null)
