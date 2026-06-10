@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
 public class NumberWizard : MonoBehaviour
 {
@@ -9,7 +9,6 @@ public class NumberWizard : MonoBehaviour
 
     [SerializeField] private TMP_Text guessText;
 
-    
     [SerializeField] private Button higherButton;
     [SerializeField] private Button lowerButton;
     [SerializeField] private Button correctButton;
@@ -23,8 +22,7 @@ public class NumberWizard : MonoBehaviour
 
     void StartGame()
     {
-        guess = (min + max) / 2;
-        UpdateGuessDisplay();
+        NextGuess();
     }
 
     public void OnHigherPressed()
@@ -39,19 +37,15 @@ public class NumberWizard : MonoBehaviour
         NextGuess();
     }
 
-    
     public void OnCorrectPressed()
     {
-        
         Debug.Log("I guessed your number!");
 
-        
         if (guessText != null)
         {
-            guessText.text = $"Win! {guess}";
+            guessText.text = guess.ToString() + " - Win!";
         }
 
-        
         if (higherButton != null) higherButton.interactable = false;
         if (lowerButton != null) lowerButton.interactable = false;
         if (correctButton != null) correctButton.interactable = false;
@@ -59,7 +53,7 @@ public class NumberWizard : MonoBehaviour
 
     void NextGuess()
     {
-        guess = (min + max) / 2;
+        guess = (min + max + 1) / 2;
         UpdateGuessDisplay();
     }
 
