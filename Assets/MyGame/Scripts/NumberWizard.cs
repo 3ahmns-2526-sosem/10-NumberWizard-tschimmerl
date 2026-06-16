@@ -21,7 +21,7 @@ public class NumberWizard : MonoBehaviour
     private int startMax;
     private int guess;
 
-    void Start()
+    private void Start()
     {
         
         startMin = min;
@@ -30,7 +30,7 @@ public class NumberWizard : MonoBehaviour
         StartGame();
     }
 
-    void StartGame()
+    private void StartGame()
     {
         
         min = startMin;
@@ -81,13 +81,13 @@ public class NumberWizard : MonoBehaviour
         StartGame();
     }
 
-    void NextGuess()
+    private void NextGuess()
     {
         guess = (min + max + 1) / 2;
         UpdateGuessDisplay();
     }
 
-    void UpdateGuessDisplay()
+    private void UpdateGuessDisplay()
     {
         if (guessText != null)
         {
